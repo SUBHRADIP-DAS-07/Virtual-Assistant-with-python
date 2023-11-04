@@ -6,11 +6,11 @@ import wikipedia
 import webbrowser
 import os
 import smtplib
-# import pyaudio
+import pyaudio
 import random
 import googletrans
 from googletrans import *
-# import googlesearch
+import googlesearch
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -149,7 +149,7 @@ if __name__ == "__main__":
             speak("I am an artificial intelligence, made by Subhradip Das. I can answer you whatever you ask. THank u")
 
         elif 'translate this' in query:
-            # word=input(speak("Enter the word or sentence"))
+            word=input(speak("Enter the word or sentence"))
             word=takeCommand().lower()
             print(translaet(word))
 
@@ -169,11 +169,11 @@ if __name__ == "__main__":
 
         else:
             speak("lemme search it")
-            # pywhatkit.search(query)
-            # try:
-            answer= wikipedia.summary(query,sentences="2")
-            speak(answer)
+            pywhatkit.search(query)
+            try:
+                answer= wikipedia.summary(query,sentences="2")
+                speak(answer)
             
-            # except:
-            #     speak("I am sorry sir, but still cannot figure it out")
+            except:
+                speak("I am sorry sir, but still cannot figure it out")
             
